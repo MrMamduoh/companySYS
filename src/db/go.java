@@ -69,12 +69,13 @@ public class go {
         return false;
     }
 
-    public static String getAutoNum(String tableName, String columnName) {
+    public static String getAutoNumber(String tableName, String columnName) {
         try {
             setConnection();
             Statement stmt = connect.createStatement();
-            String query = "SELECT MAX(" + columnName + ")+1 as autoNum FROM" + tableName;
-            stmt.execute(query);
+            String query = "select max(" + columnName + ")+1 as autoNum"
+                    + "FROM" + tableName;
+                       stmt.executeQuery(query);
             String num = "";
             while (stmt.getResultSet().next()) {
                 num = stmt.getResultSet().getString("autoNum");
@@ -87,7 +88,7 @@ public class go {
             }
         } catch (SQLException ex) {
             Tools.msgBox(ex.getMessage());
-            return "";
+            return "0";
         }
 
     }
@@ -147,7 +148,7 @@ public class go {
             if (table.getColumnCount() != c) {
                 Tools.msgBox("JTable Columns Count Doesn't Equal Query Columns count !" + table.getColumnCount() + "\n Query Columns count Is : " + c);
             }
-            connect.close();
+            connect.close();    
         } catch (SQLException ex) {
             Tools.msgBox(ex.getMessage());
         }

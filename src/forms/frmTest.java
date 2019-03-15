@@ -5,18 +5,18 @@
  */
 package forms;
 
-import company.Tools;
+import Entity.Department;
 
 /**
  *
  * @author User
  */
-public class frmMain extends javax.swing.JFrame {
+public class frmTest extends javax.swing.JFrame {
 
     /**
-     * Creates new form frmMain
+     * Creates new form frmTest
      */
-    public frmMain() {
+    public frmTest() {
         initComponents();
     }
 
@@ -29,71 +29,68 @@ public class frmMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        btn_exit = new controls.JMyButton(30);
-        btn_exit1 = new controls.JMyButton(30);
+        btn_dept = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbl_Test = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel1.setText("Main ");
-
-        btn_exit.setText("Exit");
-        btn_exit.addActionListener(new java.awt.event.ActionListener() {
+        btn_dept.setText("dept Test");
+        btn_dept.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_exitActionPerformed(evt);
+                btn_deptActionPerformed(evt);
             }
         });
 
-        btn_exit1.setText("Department");
-        btn_exit1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_exit1ActionPerformed(evt);
+        tbl_Test.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3"
             }
-        });
+        ));
+        jScrollPane1.setViewportView(tbl_Test);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(btn_exit)
+                .addComponent(btn_dept)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(166, 166, 166)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btn_exit1)))
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(20, 20, 20)
-                .addComponent(btn_exit1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
-                .addComponent(btn_exit)
-                .addContainerGap())
+                .addComponent(btn_dept)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_exitActionPerformed
-        // TODO add your1 handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_btn_exitActionPerformed
-
-    private void btn_exit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_exit1ActionPerformed
+    private void btn_deptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deptActionPerformed
         // TODO add your handling code here:
-        Tools.openForm(new frmDepartment());
-    }//GEN-LAST:event_btn_exit1ActionPerformed
+          
+      Department dp = new Department();
+     dp.setDEPT_NO(20);
+       dp.setDept_Name("fk");
+        dp.setLocation("fhh");
+       // dp.add();
+       //dp.delete();
+       //dp.update();
+       dp.getAllRows(tbl_Test);
+       // dp.getAllRows(tbl_Test);
+        
+    }//GEN-LAST:event_btn_deptActionPerformed
 
     /**
      * @param args the command line arguments
@@ -112,27 +109,27 @@ public class frmMain extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmMain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmMain().setVisible(true);
+                new frmTest().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_exit;
-    private javax.swing.JButton btn_exit1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btn_dept;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tbl_Test;
     // End of variables declaration//GEN-END:variables
 }
